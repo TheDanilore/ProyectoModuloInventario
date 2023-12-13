@@ -45,6 +45,7 @@ public class SvUsuarios extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String nombres = request.getParameter("nombresUsuario");
         String correo = request.getParameter("correoUsuario");
         String contra = request.getParameter("contraUsuario");
         int cargo = Integer.parseInt(request.getParameter("idCargo"));
@@ -56,7 +57,7 @@ public class SvUsuarios extends HttpServlet {
         car = control.getCargo(cargo);
 
         if (car != null) {
-            control.crearUsuario(correo, contra, cargo, estado);
+            control.crearUsuario(nombres,correo, contra, cargo, estado);
             List<Usuario> listaUsuarios = new ArrayList<Usuario>();
 
             listaUsuarios = control.listUsuario();

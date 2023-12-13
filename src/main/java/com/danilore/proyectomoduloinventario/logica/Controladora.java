@@ -12,8 +12,9 @@ public class Controladora {
 
     ControladoraPersistencia controlPersis = new ControladoraPersistencia();
 
-    public void crearUsuario(String correo, String contra, int cargo, int estado) {
+    public void crearUsuario(String nombres,String correo, String contra, int cargo, int estado) {
         Usuario usu = new Usuario();
+        usu.setNombres_usuario(nombres);
         usu.setCorreo_usuario(correo);
         usu.setContra_usuario(contra);
         usu.setId_cargo(cargo);

@@ -73,7 +73,10 @@
                                         return validarCorreo();
                                     }
                                 </script>
-
+                                <div class="col">
+                                    <label>Nombres Completos: </label>
+                                    <input type="text" class="form-control mb-3" id="nombresUsuario" name="nombresUsuario" value="<%=usu.getNombres_usuario()%>" required>
+                                </div>
                                 <div class="col">
                                     <label>Correo: </label>
                                     <input type="email" class="form-control mb-3" id="correoUsuario" name="correoUsuario" value="<%=usu.getCorreo_usuario()%>" required>

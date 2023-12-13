@@ -50,6 +50,7 @@ public class SvEditarUsuario extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String nombres = request.getParameter("nombresUsuario");
         String correo = request.getParameter("correoUsuario");
         String contra = request.getParameter("contraUsuario");
         int cargo = Integer.parseInt(request.getParameter("idCargo"));
@@ -62,6 +63,7 @@ public class SvEditarUsuario extends HttpServlet {
 
         if (car != null) {
             Usuario usu = (Usuario) request.getSession().getAttribute("editarUsuario");
+            usu.setNombres_usuario(nombres);
             usu.setCorreo_usuario(correo);
             usu.setContra_usuario(contra);
             usu.setId_cargo(cargo);

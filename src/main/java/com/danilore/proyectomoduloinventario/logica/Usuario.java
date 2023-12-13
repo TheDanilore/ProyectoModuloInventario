@@ -18,13 +18,13 @@ import javax.persistence.TemporalType;
  *
  * @author Danilore
  */
-
 @Entity
 public class Usuario implements Serializable {
-    
+
     @Id
-    @GeneratedValue (strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id_usuario;
+    private String nombres_usuario;
     private String correo_usuario;
     private String contra_usuario;
     private int id_cargo;
@@ -35,8 +35,9 @@ public class Usuario implements Serializable {
         fecha_creacion = LocalDateTime.now();
     }
 
-    public Usuario(int id_usuario, String correo_usuario, String contra_usuario, int id_cargo, int id_estado, LocalDateTime fecha_creacion) {
+    public Usuario(int id_usuario, String nombres_usuario, String correo_usuario, String contra_usuario, int id_cargo, int id_estado, LocalDateTime fecha_creacion) {
         this.id_usuario = id_usuario;
+        this.nombres_usuario = nombres_usuario;
         this.correo_usuario = correo_usuario;
         this.contra_usuario = contra_usuario;
         this.id_cargo = id_cargo;
@@ -50,6 +51,14 @@ public class Usuario implements Serializable {
 
     public void setId_usuario(int id_usuario) {
         this.id_usuario = id_usuario;
+    }
+
+    public String getNombres_usuario() {
+        return nombres_usuario;
+    }
+
+    public void setNombres_usuario(String nombres_usuario) {
+        this.nombres_usuario = nombres_usuario;
     }
 
     public String getCorreo_usuario() {
@@ -92,6 +101,5 @@ public class Usuario implements Serializable {
         this.fecha_creacion = fecha_creacion;
     }
 
-    
     
 }

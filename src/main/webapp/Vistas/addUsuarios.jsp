@@ -57,18 +57,21 @@
 
                                         if (!emailRegex.test(email)) {
                                             alert("Ingresa una dirección de correo electrónico válida.");
-                                            return false; 
+                                            return false;
                                         }
 
-                                        return true; 
+                                        return true;
                                     }
 
                                     function validarFormulario() {
-                                        
+
                                         return validarCorreo();
                                     }
                                 </script>
-
+                                <div class="col">
+                                    <label>Nombres Completos: </label>
+                                    <input type="text" class="form-control mb-3" id="nombresUsuario" name="nombresUsuario" placeholder="Nombres del Empleado" required>
+                                </div>
                                 <div class="col">
                                     <label>Correo: </label>
                                     <input type="email" class="form-control mb-3" id="correoUsuario" name="correoUsuario" placeholder="CORREO" required>

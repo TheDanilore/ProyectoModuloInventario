@@ -7,7 +7,6 @@
 <%@page import="com.danilore.proyectomoduloinventario.logica.IngresoProducto"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -103,7 +102,7 @@
                                 </div>
                                 <div class="row">
                                     <label>Nombre del Personal: </label>
-                                    <input type="text" class="form-control mb-3" name="nombrePersonal" value="Lorenzo Daniel Arteaga Gordillo" required>
+                                    <input type="text" class="form-control mb-3" name="nombrePersonal" value="<%=request.getSession().getAttribute("usuario")%>" required>
                                 </div>
 
 
