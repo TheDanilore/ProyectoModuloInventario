@@ -38,15 +38,15 @@
             <div class="card">
                 <div class="card-body">
                     <img src="Imagenes/perfil.png" alt="Logo de la empresa" class="logo-img">
-                    <h1 class="card-title text-center">ADMINISTRAR</h1>
-                    <form action="loginServlet" method="post" onsubmit="redirectToNewPage()">
+                    <h1 class="card-title text-center">LOGIN</h1>
+                    <form action="SvLogin" method="POST" <!--onsubmit="redirectToNewPage()"-->>
                         <div class="form-group">
-                            <label for="username"><strong>USUARIO:</strong></label>
-                            <input type="text" class="form-control" id="username" name="username" style="width: 60%; margin: 0 auto;" required>
+                            <label for="correo"><strong>Correo:</strong></label>
+                            <input type="text" class="form-control" id="correo" name="correo" style="width: 60%; margin: 0 auto;" placeholder="Correo Electronico"  required>
                         </div>
                         <div class="form-group">
-                            <label for="password"><strong>CONTRASEÑA:</strong></label>
-                            <input type="password" class="form-control" id="password" name="password" style="width: 60%; margin: 0 auto;" required>
+                            <label for="contra"><strong>Contraseña:</strong></label>
+                            <input type="password" class="form-control" id="contra" name="contra" style="width: 60%; margin: 0 auto;" placeholder="Contraseña" required>
                         </div>
                         <button type="submit" class="btn btn-primary btn-block" style="width: 30%; margin: 0 auto;">Ingresar</button>
                     </form>

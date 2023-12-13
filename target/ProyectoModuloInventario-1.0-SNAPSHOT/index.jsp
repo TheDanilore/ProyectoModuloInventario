@@ -14,6 +14,15 @@
         <link href="css/header.css" rel="stylesheet" />
     </head>
     <body>
+        <!--Validacion de la Sesion-->
+        <% HttpSession misession = request.getSession();
+            String usuario = (String) request.getSession().getAttribute("usuario");
+
+            if (usuario == null) {
+                response.sendRedirect("sinLogin.jsp");
+            }
+
+        %>
 
         <div class="container-fluid">
             <div class="row">
@@ -124,10 +133,25 @@
                                     </ul>
                                 </div>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="collapse" href="#opcion8">
+                                    Perfil  
+                                </a>
+                                <div id="opcion8" class="collapse">
+                                    <!-- Subopciones de la Opción 2 -->
+                                    <ul class="nav flex-column ml-3">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#"></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <!--<a class="nav-link" href="../SvCategoriaProducto">Cerrar Sesión</a>-->
+                                            <button class="btn btn-danger mt-4 logout-button">Cerrar Sesión</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
                         </ul>
 
-                        <!-- Botón de cerrar sesión -->
-                        <button class="btn btn-danger mt-4 logout-button">Cerrar Sesión</button>
                     </div>
                 </nav>
                 <!-- Contenido principal -->
@@ -137,7 +161,7 @@
                         <header class="nom-empre">
 
                             <h1 class="agroarte">Modulo de Inventario</h1>
-                            
+
                         </header>
                     </center>
 

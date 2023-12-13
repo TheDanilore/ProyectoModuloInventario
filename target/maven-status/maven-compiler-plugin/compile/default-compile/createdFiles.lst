@@ -67,6 +67,7 @@ com\danilore\proyectomoduloinventario\servlets\SvActivarCargo.class
 com\danilore\proyectomoduloinventario\servlets\SvProveedor.class
 com\danilore\proyectomoduloinventario\persistencia\GuiaRemisionSalidaJpaController.class
 com\danilore\proyectomoduloinventario\servlets\SvEliminarCategoriaProducto.class
+com\danilore\proyectomoduloinventario\servlets\SvLogin.class
 com\danilore\proyectomoduloinventario\persistencia\SalidaProductoJpaController.class
 com\danilore\proyectomoduloinventario\logica\GuiaRemisionEntrada.class
 com\danilore\proyectomoduloinventario\logica\exceptions\PreexistingEntityException.class
