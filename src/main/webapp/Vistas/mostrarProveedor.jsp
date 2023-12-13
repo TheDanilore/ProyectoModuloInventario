@@ -110,7 +110,7 @@
                                             <input type="hidden" name="id_proveedorEdit" value="<%=proveedor.getId_proveedor()%>">
                                             <button class="btn btn-info"  type="submit">Editar</button>
                                         </form>
-                                        <form class="btn btn-danger" action="../SvActivarProveedor" method="POST">
+                                        <form class="btn btn-danger" action="../SvBajaProveedor" method="POST">
                                             <input type="hidden" name="id_proveedor" value="<%=proveedor.getId_proveedor()%>">
                                             <button class="btn btn-danger"  type="submit">Dar de Baja</button>
                                         </form> 

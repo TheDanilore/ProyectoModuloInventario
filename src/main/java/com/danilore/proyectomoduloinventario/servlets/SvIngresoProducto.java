@@ -3,6 +3,8 @@ package com.danilore.proyectomoduloinventario.servlets;
 import com.danilore.proyectomoduloinventario.logica.Controladora;
 import com.danilore.proyectomoduloinventario.logica.GuiaRemisionEntrada;
 import com.danilore.proyectomoduloinventario.logica.IngresoProducto;
+import com.danilore.proyectomoduloinventario.logica.Producto;
+import com.danilore.proyectomoduloinventario.logica.TipoMoneda;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -22,26 +24,25 @@ import javax.servlet.http.HttpSession;
 public class SvIngresoProducto extends HttpServlet {
 
     Controladora control = new Controladora();
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
     }
 
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         List<IngresoProducto> listaIngresoProducto = new ArrayList<IngresoProducto>();
-        
+
         listaIngresoProducto = control.listIngresoProducto();
-        
+
         HttpSession misesion = request.getSession();
-        misesion.setAttribute("listaIngresoProducto",listaIngresoProducto);
-        
+        misesion.setAttribute("listaIngresoProducto", listaIngresoProducto);
+
         response.sendRedirect("Vistas/mostrarIngresoProducto.jsp");
     }
-
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -52,30 +53,44 @@ public class SvIngresoProducto extends HttpServlet {
         String tipoMoneda = request.getParameter("idTipoMoneda");
         String guia = request.getParameter("idGuia");
         String personalrecibio = request.getParameter("nombrePersonal");
-        
-        
-        //long ruc = Long.parseLong(request.getParameter("ruc"));
-        
-        
-        IngresoProducto ingreso = new IngresoProducto();
-        ingreso.setId_producto(producto);
-        ingreso.setCantidad(cantidad);
-        ingreso.setTotal_costo(totalCosto);
-        ingreso.setId_tipo_moneda(tipoMoneda);
-        ingreso.setId_guia(guia);
-        ingreso.setPersonal_recibio(personalrecibio);
-        control.crearIngresoProducto(ingreso);
-        
-        
-        
-        List<IngresoProducto> listaIngresoProducto = new ArrayList<IngresoProducto>();
-        
-        listaIngresoProducto = control.listIngresoProducto();
-        HttpSession misesion = request.getSession();
-        misesion.setAttribute("listaIngresoProducto",listaIngresoProducto);
-        response.sendRedirect("Vistas/mostrarIngresoProducto.jsp");
-    }
 
+        //long ruc = Long.parseLong(request.getParameter("ruc"));
+        //Consiguiendo objeto producto por el id
+        Producto produ = control.getProducto(producto);
+
+        produ = control.getProducto(producto);
+
+        //Consiguiendo objeto tipoMoneda por el id
+        TipoMoneda tipo = control.getTipoMoneda(tipoMoneda);
+
+        tipo = control.getTipoMoneda(tipoMoneda);
+
+        if (produ != null) {
+            if (tipo != null) {
+                IngresoProducto ingreso = new IngresoProducto();
+                ingreso.setId_producto(producto);
+                ingreso.setCantidad(cantidad);
+                ingreso.setTotal_costo(totalCosto);
+                ingreso.setId_tipo_moneda(tipoMoneda);
+                ingreso.setId_guia(guia);
+                ingreso.setPersonal_recibio(personalrecibio);
+                control.crearIngresoProducto(ingreso);
+
+                List<IngresoProducto> listaIngresoProducto = new ArrayList<IngresoProducto>();
+
+                listaIngresoProducto = control.listIngresoProducto();
+                HttpSession misesion = request.getSession();
+                misesion.setAttribute("listaIngresoProducto", listaIngresoProducto);
+                response.sendRedirect("Vistas/mostrarIngresoProducto.jsp");
+            }else{
+                response.sendRedirect("Vistas/addIngresoProducto.jsp?error=tipoMonedaNoExiste");
+            }
+
+        } else {
+            response.sendRedirect("Vistas/addIngresoProducto.jsp?error=productoNoExiste");
+        }
+
+    }
 
     @Override
     public String getServletInfo() {

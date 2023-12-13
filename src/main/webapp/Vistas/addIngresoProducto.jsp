@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Registrar Categoria</title>
+        <title>Registrar Ingreso de Producto</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="../css/Estilos_Principal.css">
@@ -47,7 +47,7 @@
                             <h1>Registrar Ingreso de Productos</h1>
                             </font>
 
-                            <form action="../SvIngresoProducto" method="POST">
+                            <form onsubmit="return validarFormulario()" action="../SvIngresoProducto" method="POST">
                                 <br>
 
                                 <div class="row">
@@ -58,34 +58,50 @@
                                     </div>-->
                                     <div class="col">
                                         <label>Producto: </label>
-                                        <input type="text" class="form-control mb-3" name="idProducto" placeholder="Producto">
+                                        <input type="text" class="form-control mb-3" name="idProducto" placeholder="Producto" required>
                                     </div>
+                                    <script>
+
+                                        function validarFormulario() {
+                                            var cantidad = document.getElementById("cantidad").value;
+                                            var total = document.getElementById("totalCosto").value;
+                                            
+                                            // Verificar si el valor es un número y mayor que cero
+                                            if (isNaN(cantidad) || cantidad <= 0) {
+                                                alert("Ingresa una cantidad mayor a 0.");
+                                                return false; // Evitar el envío del formulario si la validación falla
+                                            }if (isNaN(total) || total <= 0) {
+                                                alert("Ingresa un total mayor a 0.");
+                                                return false; // Evitar el envío del formulario si la validación falla
+                                            }
+                                            return true; // Enviar el formulario si la validación es exitosa
+                                        }
+                                    </script>
                                     <div class="col">
                                         <label>Cantidad: </label>
-                                        <input type="number" class="form-control mb-3" name="cantidad" placeholder="Cantidad Ingreso">
+                                        <input type="number" class="form-control mb-3" id="cantidad" name="cantidad" placeholder="Cantidad Ingreso" required>
                                     </div>
 
                                 </div>
                                 <div class="row">
-
                                     <div class="col">
                                         <label>Total (S/): </label>
-                                        <input type="number" class="form-control mb-3" name="totalCosto" placeholder="Total Costo (S/.)">
+                                        <input type="number" class="form-control mb-3" id="totalCosto" name="totalCosto" placeholder="Total Costo (S/.)" required>
 
                                     </div>
                                     <div class="col">
                                         <label>Tipo de Moneda: </label>
-                                        <input type="text" class="form-control mb-3" name="idTipoMoneda" placeholder="Tipo de Moneda">
+                                        <input type="text" class="form-control mb-3" name="idTipoMoneda" placeholder="Tipo de Moneda" required>
 
                                     </div>
                                     <div class="col">
                                         <label>N° de Guia: </label>
-                                        <input type="text" class="form-control mb-3" name="idGuia" placeholder="Numero de Guia">
+                                        <input type="text" class="form-control mb-3" name="idGuia" placeholder="Numero de Guia" required>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <label>Nombre del Personal: </label>
-                                    <input type="text" class="form-control mb-3" name="nombrePersonal" value="Lorenzo Daniel Arteaga Gordillo">
+                                    <input type="text" class="form-control mb-3" name="nombrePersonal" value="Lorenzo Daniel Arteaga Gordillo" required>
                                 </div>
 
 
@@ -110,6 +126,7 @@
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 
 
 

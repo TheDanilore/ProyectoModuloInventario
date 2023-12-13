@@ -9,6 +9,7 @@ C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\
 C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\com\danilore\proyectomoduloinventario\persistencia\UsuarioJpaController.java
 C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\com\danilore\proyectomoduloinventario\servlets\SvCategoriaProducto.java
 C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\com\danilore\proyectomoduloinventario\servlets\SvLogin.java
+C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\com\danilore\proyectomoduloinventario\logica\UnidadMedida.java
 C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\com\danilore\proyectomoduloinventario\servlets\SvBajaCargo.java
 C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\Imagenes\exceptions\exceptions\PreexistingEntityException.java
 C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\Imagenes\exceptions\NonexistentEntityException.java
@@ -28,6 +29,7 @@ C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\
 C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\com\danilore\proyectomoduloinventario\servlets\SvActivarProveedor.java
 C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\com\danilore\proyectomoduloinventario\servlets\SvActivarCargo.java
 C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\com\danilore\proyectomoduloinventario\servlets\SvActivarUsuario.java
+C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\com\danilore\proyectomoduloinventario\persistencia\UnidadMedidaJpaController.java
 C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\com\danilore\proyectomoduloinventario\logica\CategoriaProducto.java
 C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\com\danilore\proyectomoduloinventario\persistencia\ControladoraPersistencia.java
 C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\com\danilore\proyectomoduloinventario\persistencia\TipoDocumentoIdentidadJpaController.java
@@ -39,6 +41,7 @@ C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\
 C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\com\danilore\proyectomoduloinventario\servlets\SvCargo.java
 C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\com\danilore\proyectomoduloinventario\persistencia\ProductoJpaController.java
 C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\com\danilore\proyectomoduloinventario\persistencia\EmpleadoJpaController.java
+C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\com\danilore\proyectomoduloinventario\logica\TipoMoneda.java
 C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\com\danilore\proyectomoduloinventario\persistencia\exceptions\IllegalOrphanException.java
 C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\com\danilore\proyectomoduloinventario\logica\exceptions\NonexistentEntityException.java
 C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\com\danilore\proyectomoduloinventario\servlets\SvEditarUsuario.java
@@ -57,6 +60,7 @@ C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\
 C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\com\danilore\proyectomoduloinventario\servlets\SvBajaProveedor.java
 C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\com\danilore\proyectomoduloinventario\logica\Controladora.java
 C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\com\danilore\proyectomoduloinventario\logica\Empleado.java
+C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\com\danilore\proyectomoduloinventario\persistencia\TipoMonedaJpaController.java
 C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\Imagenes\exceptions\exceptions\IllegalOrphanException.java
 C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\com\danilore\proyectomoduloinventario\persistencia\exceptions\PreexistingEntityException.java
 C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\Imagenes\exceptions\PreexistingEntityException.java

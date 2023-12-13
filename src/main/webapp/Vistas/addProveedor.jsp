@@ -23,7 +23,7 @@
 
         <div class="container-fluid">
             <div class="row">
-<%@include file="../components/menu.jsp" %>
+                <%@include file="../components/menu.jsp" %>
                 <!-- Contenido principal -->
                 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
                     <!-- Resto del contenido de la página -->
@@ -40,45 +40,68 @@
 
 
                     <div class="container ">
-                            <center>
-                                <font style="color: black;" align="center">
-                                <h1>Registrar Proveedor</h1>
-                                </font>
+                        <center>
+                            <font style="color: black;" align="center">
+                            <h1>Registrar Proveedor</h1>
+                            </font>
 
-                                <form action="../SvProveedor" method="POST">
-                                    <br>
+                            <form onsubmit="return validarFormulario()" action="../SvProveedor" method="POST">
+                                <br>
 
-                                    <div class="row">
-                                        <div class="col">
-                                            <label>RUC: </label>
-                                            <input type="text" class="form-control mb-3" name="rucProveedor" placeholder="RUC">
-                                        </div>
+                                <div class="row">
+                                    <script>
+                                        function validarFormulario() {
+                                            var ruc = document.getElementById("rucProveedor").value;
+                                            var telefono = document.getElementById("telefonoProveedor").value;
 
-                                        <div class="col">
-                                            <label>Razon Social: </label>
-                                            <input type="text" class="form-control mb-3" name="razonProveedor" placeholder="Razon Social">
-                                        </div>
+                                            // Valida el RUC, si es tiene 11 caracteres numéricos
+                                            if (!/^\d{11}$/.test(ruc)) {
+                                                alert("Ingresa un RUC válido de 11 dígitos numéricos.");
+                                                return false; // no se envia el formulario si la validación falla
+                                            }
+
+                                            // Valida el teléfono, si tiene números, espacios y/o símbolo '+'
+                                            if (!/^[\d+ ]+$/.test(telefono)) {
+                                                alert("Ingresa un número de teléfono válido.");
+                                                return false; // Evitar el envío del formulario si la validación falla
+                                            }
+
+                                            // Eliminar espacios del teléfono antes de enviar el formulario
+                                            document.getElementById("telefono").value = telefono.replace(/\s+/g, '');
+
+                                            return true; // Enviar el formulario si la validación es exitosa
+                                        }
+                                    </script>
+                                    <div class="col">
+                                        <label>RUC: </label>
+                                        <input type="text" class="form-control mb-3" id="rucProveedor" name="rucProveedor" placeholder="RUC" required>
                                     </div>
 
-                                    <div class="row">
-                                        <div class="col">
-                                            <label>Dirección: </label>
-                                            <input type="text" class="form-control mb-3" name="direccionProveedor" placeholder="Ubicacion del Proveedor">
-                                        </div>
-                                        <div class="col">
-                                            <label>Telefono: </label>
-                                            <input type="text" class="form-control mb-3" name="telefonoProveedor" placeholder="Numero de Telefono">
-                                        </div>
+                                    <div class="col">
+                                        <label>Razon Social: </label>
+                                        <input type="text" class="form-control mb-3" name="razonProveedor" placeholder="Razon Social" required>
+                                    </div>
+                                </div>
 
+                                <div class="row">
+                                    <div class="col">
+                                        <label>Dirección: </label>
+                                        <input type="text" class="form-control mb-3" name="direccionProveedor" placeholder="Ubicacion del Proveedor" required>
+                                    </div>
+                                    <div class="col">
+                                        <label>Telefono: </label>
+                                        <input type="text" class="form-control mb-3" id="telefonoProveedor" name="telefonoProveedor" placeholder="Numero de Telefono" required>
                                     </div>
 
-                                    <button type="submit" class="btn btn-primary">Registrar</button>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <a href="mostrarProveedor.jsp"
-                                       class="btn btn-danger">Cancelar</a>
-                                </form>
+                                </div>
 
-                            </center>
+                                <button type="submit" class="btn btn-primary">Registrar</button>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <a href="mostrarProveedor.jsp"
+                                   class="btn btn-danger">Cancelar</a>
+                            </form>
+
+                        </center>
                     </div>
 
 

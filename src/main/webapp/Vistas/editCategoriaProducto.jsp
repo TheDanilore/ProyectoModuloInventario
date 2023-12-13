@@ -51,7 +51,7 @@
                                     <br>
                                     <div class="col">
                                         <label>Descripcion: </label>
-                                        <input type="text" class="form-control mb-3" name="descripcionCategoria" value="<%=categoriaObj.getDescripcion()%>">
+                                        <input type="text" class="form-control mb-3" name="descripcionCategoria" value="<%=categoriaObj.getDescripcion()%>" required>
                                     </div>
 
                                     <button type="submit" class="btn btn-primary">Guardar</button>

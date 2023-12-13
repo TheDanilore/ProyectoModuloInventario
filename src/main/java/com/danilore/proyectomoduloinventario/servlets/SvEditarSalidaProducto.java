@@ -5,7 +5,9 @@
 package com.danilore.proyectomoduloinventario.servlets;
 
 import com.danilore.proyectomoduloinventario.logica.Controladora;
+import com.danilore.proyectomoduloinventario.logica.Producto;
 import com.danilore.proyectomoduloinventario.logica.SalidaProducto;
+import com.danilore.proyectomoduloinventario.logica.TipoMoneda;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -25,28 +27,27 @@ import javax.servlet.http.HttpSession;
 public class SvEditarSalidaProducto extends HttpServlet {
 
     Controladora control = new Controladora();
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-    }
 
+    }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String id_editar = request.getParameter("id_Edit");
-        
+
         SalidaProducto salida = control.getSalidaProducto(id_editar);
-        
+
         salida = control.getSalidaProducto(id_editar);
-        
+
         HttpSession misesion = request.getSession();
-        misesion.setAttribute("editarSalidaProducto",salida);
-        
+        misesion.setAttribute("editarSalidaProducto", salida);
+
         response.sendRedirect("Vistas/editSalidaProducto.jsp");
     }
 
-  
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -56,32 +57,47 @@ public class SvEditarSalidaProducto extends HttpServlet {
         String tipoMoneda = request.getParameter("idTipoMoneda");
         String guia = request.getParameter("idGuia");
         String personal = request.getParameter("nombrePersonal");
-        
-        
-        //long ruc = Long.parseLong(request.getParameter("ruc"));
-        
-        
-        SalidaProducto salida = (SalidaProducto) request.getSession().getAttribute("editarSalidaProducto");
-        salida.setId_producto(producto);
-        salida.setCantidad(cantidad);
-        salida.setTotal_costo(totalCosto);
-        salida.setId_tipo_moneda(tipoMoneda);
-        salida.setId_guia(guia);
-        salida.setPersonal_salida(personal);
-        control.editSalidaProducto(salida);
-        
-        
-        
-        List<SalidaProducto> lista = new ArrayList<SalidaProducto>();
-        
-        lista = control.listSalidaProducto();
-        
-        HttpSession misesion = request.getSession();
-        misesion.setAttribute("listaSalidaProducto",lista);
-        
-        response.sendRedirect("Vistas/mostrarSalidaProducto.jsp");
-    }
 
+        //long ruc = Long.parseLong(request.getParameter("ruc"));
+        //Consiguiendo objeto producto por el id
+        Producto produ = control.getProducto(producto);
+
+        produ = control.getProducto(producto);
+
+        //Consiguiendo objeto tipoMoneda por el id
+        TipoMoneda tipo = control.getTipoMoneda(tipoMoneda);
+
+        tipo = control.getTipoMoneda(tipoMoneda);
+
+        if (produ != null) {
+            if (tipo != null) {
+                SalidaProducto salida = (SalidaProducto) request.getSession().getAttribute("editarSalidaProducto");
+                salida.setId_producto(producto);
+                salida.setCantidad(cantidad);
+                salida.setTotal_costo(totalCosto);
+                salida.setId_tipo_moneda(tipoMoneda);
+                salida.setId_guia(guia);
+                salida.setPersonal_salida(personal);
+                control.editSalidaProducto(salida);
+
+                List<SalidaProducto> lista = new ArrayList<SalidaProducto>();
+
+                lista = control.listSalidaProducto();
+
+                HttpSession misesion = request.getSession();
+                misesion.setAttribute("listaSalidaProducto", lista);
+
+                response.sendRedirect("Vistas/mostrarSalidaProducto.jsp");
+            } else {
+                response.sendRedirect("Vistas/editSalidaProducto.jsp?error=tipoMonedaNoExiste");
+            }
+
+        } else {
+            response.sendRedirect("Vistas/editSalidaProducto.jsp?error=productoNoExiste");
+        }
+
+        
+    }
 
     @Override
     public String getServletInfo() {

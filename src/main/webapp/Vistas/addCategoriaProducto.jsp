@@ -21,11 +21,11 @@
     <body>
 
 
-        
+
 
         <div class="container-fluid">
             <div class="row">
-<%@include file="../components/menu.jsp" %>
+                <%@include file="../components/menu.jsp" %>
                 <!-- Contenido principal -->
                 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
                     <!-- Resto del contenido de la página -->
@@ -41,29 +41,29 @@
 
 
                     <div class="container ">
-                       
-                            <center>
-                                <font style="color: black;" align="center">
-                                <h1>Registrar Categoria de Productos</h1>
-                                </font>
 
-                                <form action="../SvCategoriaProducto" method="POST">
-                                    <br>
+                        <center>
+                            <font style="color: black;" align="center">
+                            <h1>Registrar Categoria de Productos</h1>
+                            </font>
 
-                                    <div class="col">
-                                        <label>Descripcion: </label>
-                                        <input type="text" class="form-control mb-3" name="descripcionCategoria" placeholder="Nombre de la Categoria">
-                                    </div>
+                            <form action="../SvCategoriaProducto" method="POST">
+                                <br>
+
+                                <div class="col">
+                                    <label>Descripcion: </label>
+                                    <input type="text" class="form-control mb-3" name="descripcionCategoria" placeholder="Nombre de la Categoria" required>
+                                </div>
 
 
-                                    <button type="submit" class="btn btn-primary">Registrar</button>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <a href="mostrarCategoriaProducto.jsp"
-                                       class="btn btn-danger">Cancelar</a>
-                                </form>
+                                <button type="submit" class="btn btn-primary">Registrar</button>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <a href="mostrarCategoriaProducto.jsp"
+                                   class="btn btn-danger">Cancelar</a>
+                            </form>
 
-                            </center>
-                       
+                        </center>
+
                     </div>
 
 
@@ -78,7 +78,7 @@
 
 
 
-   
+
 
 
 

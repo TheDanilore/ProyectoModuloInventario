@@ -1,6 +1,6 @@
-
 package com.danilore.proyectomoduloinventario.servlets;
 
+import com.danilore.proyectomoduloinventario.logica.Cargo;
 import com.danilore.proyectomoduloinventario.logica.Controladora;
 import com.danilore.proyectomoduloinventario.logica.Usuario;
 import java.io.IOException;
@@ -22,45 +22,52 @@ import javax.servlet.http.HttpSession;
 public class SvUsuarios extends HttpServlet {
 
     Controladora control = new Controladora();
-  
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
     }
 
-    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         List<Usuario> listaUsuarios = new ArrayList<Usuario>();
-        
+
         listaUsuarios = control.listUsuario();
-        
+
         HttpSession misesion = request.getSession();
-        misesion.setAttribute("listaUsuarios",listaUsuarios);
-        
+        misesion.setAttribute("listaUsuarios", listaUsuarios);
+
         response.sendRedirect("Vistas/mostrarUsuarios.jsp");
-    
+
     }
 
-    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String correo = request.getParameter("correoUsuario");
         String contra = request.getParameter("contraUsuario");
         int cargo = Integer.parseInt(request.getParameter("idCargo"));
-        int estado =1;
-        
-  
-        control.crearUsuario(correo,contra,cargo,estado);
-        List<Usuario> listaUsuarios = new ArrayList<Usuario>();
-        
-        listaUsuarios = control.listUsuario();
-        
-        HttpSession misesion = request.getSession();
-        misesion.setAttribute("listaUsuarios",listaUsuarios);
-        response.sendRedirect("Vistas/mostrarUsuarios.jsp");
+        int estado = 1;
+
+        //Consiguiendo objeto tipoMoneda por el id
+        Cargo car = control.getCargo(cargo);
+
+        car = control.getCargo(cargo);
+
+        if (car != null) {
+            control.crearUsuario(correo, contra, cargo, estado);
+            List<Usuario> listaUsuarios = new ArrayList<Usuario>();
+
+            listaUsuarios = control.listUsuario();
+
+            HttpSession misesion = request.getSession();
+            misesion.setAttribute("listaUsuarios", listaUsuarios);
+            response.sendRedirect("Vistas/mostrarUsuarios.jsp");
+        }else{
+            response.sendRedirect("Vistas/addUsuarios.jsp?error=cargoNoExiste");
+        }
+
     }
 
     /**

@@ -4,6 +4,7 @@
  */
 package com.danilore.proyectomoduloinventario.servlets;
 
+import com.danilore.proyectomoduloinventario.logica.Cargo;
 import com.danilore.proyectomoduloinventario.logica.Controladora;
 import com.danilore.proyectomoduloinventario.logica.Usuario;
 import java.io.IOException;
@@ -25,27 +26,26 @@ import javax.servlet.http.HttpSession;
 public class SvEditarUsuario extends HttpServlet {
 
     Controladora control = new Controladora();
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-    }
 
+    }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         int id_editar = Integer.parseInt(request.getParameter("id_usuarioEdit"));
-        
+
         Usuario usu = control.getUsuario(id_editar);
-        
+
         usu = control.getUsuario(id_editar);
-        
+
         HttpSession misesion = request.getSession();
-        misesion.setAttribute("editarUsuario",usu);
-        
+        misesion.setAttribute("editarUsuario", usu);
+
         response.sendRedirect("Vistas/editUsuarios.jsp");
     }
-
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -53,23 +53,32 @@ public class SvEditarUsuario extends HttpServlet {
         String correo = request.getParameter("correoUsuario");
         String contra = request.getParameter("contraUsuario");
         int cargo = Integer.parseInt(request.getParameter("idCargo"));
-        int estado =1;
-        
-        Usuario usu = (Usuario) request.getSession().getAttribute("editarUsuario");
-        usu.setCorreo_usuario(correo);
-        usu.setContra_usuario(contra);
-        usu.setId_cargo(cargo);
-        usu.setId_estado(estado);
-        control.editUsuario(usu);
-        
-        
-        List<Usuario> listaUsuarios = new ArrayList<Usuario>();
-        
-        listaUsuarios = control.listUsuario();
-        
-        HttpSession misesion = request.getSession();
-        misesion.setAttribute("listaUsuarios",listaUsuarios);
-        response.sendRedirect("Vistas/mostrarUsuarios.jsp");
+        int estado = 1;
+
+        //Consiguiendo objeto tipoMoneda por el id
+        Cargo car = control.getCargo(cargo);
+
+        car = control.getCargo(cargo);
+
+        if (car != null) {
+            Usuario usu = (Usuario) request.getSession().getAttribute("editarUsuario");
+            usu.setCorreo_usuario(correo);
+            usu.setContra_usuario(contra);
+            usu.setId_cargo(cargo);
+            usu.setId_estado(estado);
+            control.editUsuario(usu);
+
+            List<Usuario> listaUsuarios = new ArrayList<Usuario>();
+
+            listaUsuarios = control.listUsuario();
+
+            HttpSession misesion = request.getSession();
+            misesion.setAttribute("listaUsuarios", listaUsuarios);
+            response.sendRedirect("Vistas/mostrarUsuarios.jsp");
+        } else {
+            response.sendRedirect("Vistas/addUsuarios.jsp?error=cargoNoExiste");
+        }
+
     }
 
     @Override

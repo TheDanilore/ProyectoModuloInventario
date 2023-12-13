@@ -27,7 +27,7 @@
 
         <div class="container-fluid">
             <div class="row">
-<%@include file="../components/menu.jsp" %>
+                <%@include file="../components/menu.jsp" %>
                 <!-- Contenido principal -->
                 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
                     <!-- Resto del contenido de la página -->
@@ -42,39 +42,58 @@
                     <br><br><br><br><br>
 
                     <div class="container ">
-                            <center>
-                                <font style="color: black;" align="center">
-                                <h1>Registrar Usuarios</h1>
-                                </font>
+                        <center>
+                            <font style="color: black;" align="center">
+                            <h1>Registrar Usuarios</h1>
+                            </font>
 
-                                <form action="../SvUsuarios" method="POST">
-                                    <br>
+                            <form onsubmit="return validarFormulario()" action="../SvUsuarios" method="POST">
+                                <br>
+                                <script>
+                                    function validarCorreo() {
+                                        var email = document.getElementById("correoUsuario").value;
+
+                                        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                                        if (!emailRegex.test(email)) {
+                                            alert("Ingresa una dirección de correo electrónico válida.");
+                                            return false; 
+                                        }
+
+                                        return true; 
+                                    }
+
+                                    function validarFormulario() {
+                                        
+                                        return validarCorreo();
+                                    }
+                                </script>
+
+                                <div class="col">
+                                    <label>Correo: </label>
+                                    <input type="email" class="form-control mb-3" id="correoUsuario" name="correoUsuario" placeholder="CORREO" required>
+                                </div>
+                                <div class="row">
 
                                     <div class="col">
-                                        <label>Correo: </label>
-                                        <input type="text" class="form-control mb-3" name="correoUsuario" placeholder="CORREO">
+                                        <label>Contraseña </label>
+                                        <input type="text" class="form-control mb-3" name="contraUsuario" placeholder="Contraseña" required>
                                     </div>
-                                    <div class="row">
-
-                                        <div class="col">
-                                            <label>Contraseña </label>
-                                            <input type="text" class="form-control mb-3" name="contraUsuario" placeholder="Contraseña">
-                                        </div>
-                                        <div class="col">
-                                            <label>Cargo: </label>
-                                            <input type="number" class="form-control mb-3" name="idCargo" placeholder="Cargo">
-
-                                        </div>
+                                    <div class="col">
+                                        <label>Cargo: </label>
+                                        <input type="number" class="form-control mb-3" name="idCargo" placeholder="Cargo" required>
 
                                     </div>
 
-                                    <button type="submit" class="btn btn-primary">Registrar</button>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <a href="mostrarUsuarios.jsp"
-                                       class="btn btn-danger">Cancelar</a>
-                                </form>
+                                </div>
 
-                            </center>
+                                <button type="submit" class="btn btn-primary">Registrar</button>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <a href="mostrarUsuarios.jsp"
+                                   class="btn btn-danger">Cancelar</a>
+                            </form>
+
+                        </center>
                     </div>
 
 

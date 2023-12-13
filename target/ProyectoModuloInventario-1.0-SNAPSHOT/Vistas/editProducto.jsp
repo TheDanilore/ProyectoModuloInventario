@@ -45,31 +45,68 @@
                             <h1>Editar Producto</h1>
                             </font>
 
-                            <form action="../SvEditarProducto" method="POST">
+                            <form onsubmit="return validarFormulario()" action="../SvEditarProducto" method="POST">
                                 <br>
                                 <% Producto pro = (Producto) request.getSession().getAttribute("editarProducto");%>
 
+                                <script>
+                                    function validarProveedor() {
+                                        var idProveedor = document.getElementById("idProveedor").value;
+
+                                        // Hacer una petición AJAX para verificar si el ID del proveedor existe
+                                        // Aquí podrías utilizar una llamada a tu servidor o API para verificar la existencia del proveedor con el ID proporcionado
+                                        // Dependiendo de tu backend, podrías usar fetch, XMLHttpRequest u otras librerías como Axios para realizar la petición
+
+                                        // Por ejemplo con fetch:
+                                        fetch('/verificarProveedor?id=' + idProveedor)
+                                                .then(response => {
+                                                    if (response.ok) {
+                                                        // El proveedor existe, seguir con el envío del formulario
+                                                        return true;
+                                                    } else {
+                                                        alert("El ID del proveedor no existe.");
+                                                        return false; // Evitar el envío del formulario si la validación falla
+                                                    }
+                                                })
+                                                .catch(error => {
+                                                    console.error('Error:', error);
+                                                    return false; // Evitar el envío del formulario si la validación falla
+                                                });
+                                    }
+
+                                    function validarFormulario() {
+                                        var precio = document.getElementById("precio").value;
+
+                                        // Verificar si el valor es un número y mayor que cero
+                                        if (isNaN(precio) || precio <= 0) {
+                                            alert("Ingresa un precio mayor a 0.");
+                                            return false; // Evitar el envío del formulario si la validación falla
+                                        }
+                                        return true,validarProveedor();
+                                    }
+                                </script>
+
                                 <div class="col">
                                     <label>Nombre: </label>
-                                    <input type="text" class="form-control mb-3" name="nombre" value="<%=pro.getNombre_producto()%>">
+                                    <input type="text" class="form-control mb-3" name="nombre" value="<%=pro.getNombre_producto()%>" required>
                                 </div>
                                 <div class="col">
                                     <label>Descripcion: </label>
-                                    <input type="text" class="form-control mb-3" name="descripcion" value="<%=pro.getDescripcion_producto()%>">
+                                    <input type="text" class="form-control mb-3" name="descripcion" value="<%=pro.getDescripcion_producto()%>" required>
                                 </div>
                                 <div class="row">
                                     <div class="col">
                                         <label>Proveedor: </label>
-                                        <input type="text" class="form-control mb-3" name="idProveedor" value="<%=pro.getId_proveedor()%>">
+                                        <input type="text" class="form-control mb-3" name="idProveedor" value="<%=pro.getId_proveedor()%>" required>
                                     </div>
                                     <div class="col">
                                         <label>Categoria: </label>
-                                        <input type="number" class="form-control mb-3" name="idCategoria" value="<%=pro.getId_categoria_producto()%>">
+                                        <input type="number" class="form-control mb-3" name="idCategoria" value="<%=pro.getId_categoria_producto()%>" required>
 
                                     </div>
                                     <div class="col">
                                         <label>Unidad de Medida: </label>
-                                        <input type="text" class="form-control mb-3" name="idUnidadMedida" value="<%=pro.getId_unidad_medida()%>">
+                                        <input type="text" class="form-control mb-3" name="idUnidadMedida" value="<%=pro.getId_unidad_medida()%>" required>
 
                                     </div>
 
@@ -77,12 +114,12 @@
                                 <div class="row">
                                     <div class="col">
                                         <label>Precio: </label>
-                                        <input type="text" class="form-control mb-3" name="precio" value="<%=pro.getPrecio()%>">
+                                        <input type="text" class="form-control mb-3" id="precio" name="precio" value="<%=pro.getPrecio()%>" required>
 
                                     </div>
                                     <div class="col">
                                         <label>Moneda: </label>
-                                        <input type="text" class="form-control mb-3" name="idTipoMoneda" value="<%=pro.getId_tipo_moneda()%>">
+                                        <input type="text" class="form-control mb-3" name="idTipoMoneda" value="<%=pro.getId_tipo_moneda()%>" required>
 
                                     </div>
 

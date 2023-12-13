@@ -1,6 +1,7 @@
 com\danilore\proyectomoduloinventario\logica\IngresoProducto.class
 com\danilore\proyectomoduloinventario\logica\exceptions\NonexistentEntityException.class
 com\danilore\proyectomoduloinventario\logica\exceptions\IllegalOrphanException.class
+com\danilore\proyectomoduloinventario\logica\UnidadMedida_.class
 com\danilore\proyectomoduloinventario\servlets\SvEditarProducto.class
 com\danilore\proyectomoduloinventario\logica\Producto_.class
 com\danilore\proyectomoduloinventario\logica\Proveedor_.class
@@ -17,6 +18,7 @@ Imagenes\exceptions\IllegalOrphanException.class
 com\danilore\proyectomoduloinventario\servlets\SvLogout.class
 com\danilore\proyectomoduloinventario\logica\TipoDocumentoIdentidad.class
 com\danilore\proyectomoduloinventario\logica\Empleado.class
+com\danilore\proyectomoduloinventario\persistencia\TipoMonedaJpaController.class
 com\danilore\proyectomoduloinventario\persistencia\exceptions\NonexistentEntityException.class
 com\danilore\proyectomoduloinventario\servlets\SvCategoriaProducto.class
 com\danilore\proyectomoduloinventario\logica\Controladora.class
@@ -27,6 +29,7 @@ com\danilore\proyectomoduloinventario\logica\SalidaProducto.class
 com\danilore\proyectomoduloinventario\logica\CategoriaProducto_.class
 Imagenes\exceptions\exceptions\PreexistingEntityException.class
 com\danilore\proyectomoduloinventario\persistencia\UsuarioJpaController.class
+com\danilore\proyectomoduloinventario\logica\TipoMoneda.class
 com\danilore\proyectomoduloinventario\persistencia\CategoriaProductoJpaController.class
 com\danilore\proyectomoduloinventario\servlets\SvIngresoProducto.class
 com\danilore\proyectomoduloinventario\logica\Cargo.class
@@ -36,7 +39,9 @@ com\danilore\proyectomoduloinventario\logica\GuiaRemisionSalida_.class
 Imagenes\exceptions\NonexistentEntityException.class
 com\danilore\proyectomoduloinventario\logica\Proveedor.class
 com\danilore\proyectomoduloinventario\logica\Cargo_.class
+com\danilore\proyectomoduloinventario\persistencia\UnidadMedidaJpaController.class
 Imagenes\exceptions\exceptions\IllegalOrphanException.class
+com\danilore\proyectomoduloinventario\logica\UnidadMedida.class
 com\danilore\proyectomoduloinventario\logica\Kardex_.class
 com\danilore\proyectomoduloinventario\persistencia\exceptions\IllegalOrphanException.class
 com\danilore\proyectomoduloinventario\servlets\SvBajaUsuario.class
@@ -64,6 +69,7 @@ Imagenes\exceptions\exceptions\NonexistentEntityException.class
 com\danilore\proyectomoduloinventario\logica\TipoDocumentoIdentidad_.class
 com\danilore\proyectomoduloinventario\servlets\SvEditarUsuario.class
 com\danilore\proyectomoduloinventario\servlets\SvEditarProveedor.class
+com\danilore\proyectomoduloinventario\logica\TipoMoneda_.class
 com\danilore\proyectomoduloinventario\servlets\SvActivarCargo.class
 com\danilore\proyectomoduloinventario\servlets\SvProveedor.class
 com\danilore\proyectomoduloinventario\persistencia\GuiaRemisionSalidaJpaController.class

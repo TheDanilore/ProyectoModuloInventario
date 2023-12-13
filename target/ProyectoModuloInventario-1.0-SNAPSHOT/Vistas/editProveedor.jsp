@@ -44,29 +44,53 @@
                             <h1>Editar Proveedor</h1>
                             </font>
 
-                            <form action="../SvEditarProveedor" method="POST">
+                            <form onsubmit="return validarFormulario()" action="../SvEditarProveedor" method="POST">
                                 <br>
                                 <% Proveedor proveedor = (Proveedor) request.getSession().getAttribute("editarProveedor");%>
+
+                                <script>
+                                    function validarFormulario() {
+                                        var ruc = document.getElementById("rucProveedor").value;
+                                        var telefono = document.getElementById("telefonoProveedor").value;
+
+                                        // Valida el RUC, si es tiene 11 caracteres numéricos
+                                        if (!/^\d{11}$/.test(ruc)) {
+                                            alert("Ingresa un RUC válido de 11 dígitos numéricos.");
+                                            return false; // no se envia el formulario si la validación falla
+                                        }
+
+                                        // Valida el teléfono, si tiene números, espacios y/o símbolo '+'
+                                        if (!/^[\d+ ]+$/.test(telefono)) {
+                                            alert("Ingresa un número de teléfono válido.");
+                                            return false; // Evitar el envío del formulario si la validación falla
+                                        }
+
+                                        // Eliminar espacios del teléfono antes de enviar el formulario
+                                        document.getElementById("telefono").value = telefono.replace(/\s+/g, '');
+
+                                        return true; // Enviar el formulario si la validación es exitosa
+                                    }
+                                </script>
                                 <div class="row">
                                     <div class="col">
                                         <label>RUC: </label>
-                                        <input type="text" class="form-control mb-3" name="rucProveedor" value="<%=proveedor.getRuc()%>">
+                                        <input type="text" class="form-control mb-3" id="rucProveedor" name="rucProveedor" value="<%=proveedor.getRuc()%>" required>
                                     </div>
 
                                     <div class="col">
                                         <label>Razon Social: </label>
-                                        <input type="text" class="form-control mb-3" name="razonProveedor" value="<%=proveedor.getRazon_social()%>">
+                                        <input type="text" class="form-control mb-3" name="razonProveedor" value="<%=proveedor.getRazon_social()%>" required>
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="col">
                                         <label>Dirección: </label>
-                                        <input type="text" class="form-control mb-3" name="direccionProveedor" value="<%=proveedor.getDireccion()%>">
+                                        <input type="text" class="form-control mb-3" name="direccionProveedor" value="<%=proveedor.getDireccion()%>" required>
                                     </div>
                                     <div class="col">
                                         <label>Telefono: </label>
-                                        <input type="text" class="form-control mb-3" name="telefonoProveedor" value="<%=proveedor.getTelefono()%>">
+                                        <input type="text" class="form-control mb-3" id="telefonoProveedor" name="telefonoProveedor" value="<%=proveedor.getTelefono()%>" required>
                                     </div>
 
                                 </div>

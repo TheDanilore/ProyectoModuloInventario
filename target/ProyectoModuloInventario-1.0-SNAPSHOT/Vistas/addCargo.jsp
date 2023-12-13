@@ -51,7 +51,7 @@
 
                                 <div class="col">
                                     <label>Descripcion: </label>
-                                    <input type="text" class="form-control mb-3" name="descripcionCargo" placeholder="Cargo de Empleados">
+                                    <input type="text" class="form-control mb-3" name="descripcionCargo" placeholder="Cargo de Empleados" required>
                                 </div>
 
 

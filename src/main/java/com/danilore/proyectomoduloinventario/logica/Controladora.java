@@ -211,4 +211,45 @@ public class Controladora {
         }
         return ingreso;
     }
+    
+    
+    
+    
+    /////////////////////////////////////////////////////////////////////////////////////////////
+    
+    public void crearUnidadMedida(UnidadMedida unidad) {
+        controlPersis.crearUnidadMedida(unidad);
+    }
+
+    public List<UnidadMedida> listUnidadMedida() {
+        return controlPersis.listUnidadMedida();
+    }
+
+    public UnidadMedida getUnidadMedida(String id_editar) {
+        return controlPersis.getUnidadMedida(id_editar);
+    }
+
+    public void editUnidadMedida(UnidadMedida unidad) {
+
+        controlPersis.editUnidadMedida(unidad);
+    }
+    
+    /////////////////////////////////////////////////////////////////////////////////////////////
+    
+    public void crearTipoMoneda(TipoMoneda tipo) {
+        controlPersis.crearTipoMoneda(tipo);
+    }
+
+    public List<TipoMoneda> listTipoMoneda() {
+        return controlPersis.listTipoMoneda();
+    }
+
+    public TipoMoneda getTipoMoneda(String id_editar) {
+        return controlPersis.getTipoMoneda(id_editar);
+    }
+
+    public void editTipoMoneda(TipoMoneda tipo) {
+
+        controlPersis.editTipoMoneda(tipo);
+    }
 }

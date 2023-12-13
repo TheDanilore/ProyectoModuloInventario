@@ -46,7 +46,7 @@
                             <h1>Editar Ingreso de Producto</h1>
                             </font>
 
-                            <form action="../SvEditarIngresoProducto" method="POST">
+                            <form onsubmit="return validarFormulario()" action="../SvEditarIngresoProducto" method="POST">
                                 <br>
                                 <% IngresoProducto ingreso = (IngresoProducto) request.getSession().getAttribute("editarIngresoProducto");%>
                                 <div class="row">
@@ -57,41 +57,60 @@
                                     </div>-->
                                     <div class="col">
                                         <label>Producto: </label>
-                                        <input type="text" class="form-control mb-3" name="idProducto" value="<%=ingreso.getId_producto()%>">
+                                        <input type="text" class="form-control mb-3" name="idProducto" value="<%=ingreso.getId_producto()%>" required>
                                     </div>
+
+                                    <script>
+
+                                        function validarFormulario() {
+                                            var cantidad = document.getElementById("cantidad").value;
+                                            var total = document.getElementById("totalCosto").value;
+
+                                            // Verificar si el valor es un número y mayor que cero
+                                            if (isNaN(cantidad) || cantidad <= 0) {
+                                                alert("Ingresa una cantidad mayor a 0.");
+                                                return false; // Evitar el envío del formulario si la validación falla
+                                            }
+                                            if (isNaN(total) || total <= 0) {
+                                                alert("Ingresa un total mayor a 0.");
+                                                return false; // Evitar el envío del formulario si la validación falla
+                                            }
+                                            return true; // Enviar el formulario si la validación es exitosa
+                                        }
+                                    </script>
                                     <div class="col">
                                         <label>Cantidad: </label>
-                                        <input type="number" class="form-control mb-3" name="cantidad" value=<%=ingreso.getCantidad()%>">
-                                               </div>
-
-                                               </div>
-                                               <div class="row">
-
-                                        <div class="col">
-                                            <label>Total (S/): </label>
-                                            <input type="number" class="form-control mb-3" name="totalCosto" value="<%=ingreso.getTotal_costo()%>">
-
-                                        </div>
-                                        <div class="col">
-                                            <label>Tipo de Moneda: </label>
-                                            <input type="text" class="form-control mb-3" name="idTipoMoneda" value="<%=ingreso.getId_tipo_moneda()%>">
-
-                                        </div>
-                                        <div class="col">
-                                            <label>N° de Guia: </label>
-                                            <input type="text" class="form-control mb-3" name="idGuia" value="<%=ingreso.getId_guia()%>">
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <label>Nombre del Personal: </label>
-                                        <input type="text" class="form-control mb-3" name="nombrePersonal" value="Lorenzo Daniel Arteaga Gordillo">
+                                        <input type="number" class="form-control mb-3" id="cantidad" name="cantidad" value="<%=ingreso.getCantidad()%>" required>
                                     </div>
 
+                                </div>
+                                <div class="row">
 
-                                    <button type="submit" class="btn btn-primary">Registrar</button>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <a href="mostrarIngresoProducto.jsp"
-                                       class="btn btn-danger">Cancelar</a>
+                                    <div class="col">
+                                        <label>Total (S/): </label>
+                                        <input type="number" class="form-control mb-3" id="totalCosto" name="totalCosto" value="<%=ingreso.getTotal_costo()%>" required>
+
+                                    </div>
+                                    <div class="col">
+                                        <label>Tipo de Moneda: </label>
+                                        <input type="text" class="form-control mb-3" name="idTipoMoneda" value="<%=ingreso.getId_tipo_moneda()%>" required>
+
+                                    </div>
+                                    <div class="col">
+                                        <label>N° de Guia: </label>
+                                        <input type="text" class="form-control mb-3" name="idGuia" value="<%=ingreso.getId_guia()%>" required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label>Nombre del Personal: </label>
+                                    <input type="text" class="form-control mb-3" name="nombrePersonal" value="Lorenzo Daniel Arteaga Gordillo" required>
+                                </div>
+
+
+                                <button type="submit" class="btn btn-primary">Guardar</button>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <a href="mostrarIngresoProducto.jsp"
+                                   class="btn btn-danger">Cancelar</a>
                             </form>
 
                         </center>

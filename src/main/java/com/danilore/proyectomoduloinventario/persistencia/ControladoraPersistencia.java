@@ -9,6 +9,8 @@ import com.danilore.proyectomoduloinventario.logica.Kardex;
 import com.danilore.proyectomoduloinventario.logica.Producto;
 import com.danilore.proyectomoduloinventario.logica.Proveedor;
 import com.danilore.proyectomoduloinventario.logica.SalidaProducto;
+import com.danilore.proyectomoduloinventario.logica.TipoMoneda;
+import com.danilore.proyectomoduloinventario.logica.UnidadMedida;
 import com.danilore.proyectomoduloinventario.logica.Usuario;
 import com.danilore.proyectomoduloinventario.logica.exceptions.NonexistentEntityException;
 import java.util.List;
@@ -32,6 +34,8 @@ public class ControladoraPersistencia {
     SalidaProductoJpaController salidaJpa = new SalidaProductoJpaController();
     GuiaRemisionSalidaJpaController guiaSalidaJpa = new GuiaRemisionSalidaJpaController();
     KardexJpaController kardexJpa = new KardexJpaController();
+    UnidadMedidaJpaController unidadJpa = new UnidadMedidaJpaController();
+    TipoMonedaJpaController tipoMonedaJpa = new TipoMonedaJpaController();
 
     public ControladoraPersistencia() {
     }
@@ -60,23 +64,6 @@ public class ControladoraPersistencia {
         }
     }
     
-    /*public Usuario autenticar(Usuario usuario){
-        Usuario usuarioAutenticado = null;
-        
-        // Buscar el usuario en la base de datos por su login
-        Optional<Usuario> usuarioOptional = usuJpa.findById(usuario.getLogin());
-        
-        if(usuarioOptional.isPresent()){
-            usuarioAutenticado = usuarioOptional.get();
-            
-            // Verificar si la clave del usuario coincide
-            if(!usuarioAutenticado.getClave().equals(usuario.getClave())){
-                usuarioAutenticado = null;
-            }
-        }
-        
-        return usuarioAutenticado;
-    }*/
 
     ////////////////////////////////////////////////////////////////////////////
     //Operacion CREATE de Producto
@@ -304,4 +291,51 @@ public class ControladoraPersistencia {
         }
     }
     
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+    
+        //Operacion CREATE de Usuario
+    public void crearUnidadMedida(UnidadMedida unidad) {
+        unidadJpa.create(unidad);
+    }
+
+    //Operacion READ de Usuario
+    public List<UnidadMedida> listUnidadMedida() {
+        return unidadJpa.findUnidadMedidaEntities();
+    }
+    
+    public UnidadMedida getUnidadMedida(String id_editar) {
+        return unidadJpa.findUnidadMedida(id_editar);
+    }
+    
+    public void editUnidadMedida(UnidadMedida unidad) {
+        try {
+            unidadJpa.edit(unidad);
+        } catch (Exception ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    /////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    //Operacion CREATE de Usuario
+    public void crearTipoMoneda(TipoMoneda tipo) {
+        tipoMonedaJpa.create(tipo);
+    }
+
+    //Operacion READ de Usuario
+    public List<TipoMoneda> listTipoMoneda() {
+        return tipoMonedaJpa.findTipoMonedaEntities();
+    }
+    
+    public TipoMoneda getTipoMoneda(String id_editar) {
+        return tipoMonedaJpa.findTipoMoneda(id_editar);
+    }
+    
+    public void editTipoMoneda(TipoMoneda tipo) {
+        try {
+            tipoMonedaJpa.edit(tipo);
+        } catch (Exception ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }

@@ -49,24 +49,44 @@
                             <h1>Editar Usuario</h1>
                             </font>
 
-                            <form action="../SvEditarUsuario" method="POST">
+                            <form onsubmit="return validarFormulario()" action="../SvEditarUsuario" method="POST">
                                 <br>
                                 <% Usuario usu = (Usuario) request.getSession().getAttribute("editarUsuario");%>
 
 
+                                <script>
+                                    function validarCorreo() {
+                                        var email = document.getElementById("correoUsuario").value;
+
+                                        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                                        if (!emailRegex.test(email)) {
+                                            alert("Ingresa una dirección de correo electrónico válida.");
+                                            return false;
+                                        }
+
+                                        return true;
+                                    }
+
+                                    function validarFormulario() {
+
+                                        return validarCorreo();
+                                    }
+                                </script>
+
                                 <div class="col">
                                     <label>Correo: </label>
-                                    <input type="text" class="form-control mb-3" name="correoUsuario" value="<%=usu.getCorreo_usuario()%>">
+                                    <input type="email" class="form-control mb-3" id="correoUsuario" name="correoUsuario" value="<%=usu.getCorreo_usuario()%>" required>
                                 </div>
                                 <div class="row">
 
                                     <div class="col">
                                         <label>Contraseña </label>
-                                        <input type="password" class="form-control mb-3" name="contraUsuario" value="<%=usu.getContra_usuario()%>">
+                                        <input type="password" class="form-control mb-3" name="contraUsuario" value="<%=usu.getContra_usuario()%>" required>
                                     </div>
                                     <div class="col">
                                         <label>Cargo: </label>
-                                        <input type="number" class="form-control mb-3" name="idCargo" value="<%=usu.getId_cargo()%>">
+                                        <input type="number" class="form-control mb-3" name="idCargo" value="<%=usu.getId_cargo()%>" required>
 
                                     </div>
 
@@ -79,7 +99,7 @@
                             </form>
 
                         </center>
-                                        <br><br><br><br><br><br>
+                        <br><br><br><br><br><br>
 
                         <form class="btn btn-primary" action="../SvActivarUsuario" method="POST">
                             <input type="hidden" name="id_usuario" value="<%=usu.getId_usuario()%>">

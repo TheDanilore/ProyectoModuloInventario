@@ -52,7 +52,7 @@
                                     <% Cargo cargoObj = (Cargo) request.getSession().getAttribute("editarCargo");%>
                                     <div class="col">
                                         <label>Descripcion: </label>
-                                        <input type="text" class="form-control mb-3" name="descripcionCargo" value="<%=cargoObj.getDescripcion()%>">
+                                        <input type="text" class="form-control mb-3" name="descripcionCargo" value="<%=cargoObj.getDescripcion()%>" required>
                                     </div>
 
 
