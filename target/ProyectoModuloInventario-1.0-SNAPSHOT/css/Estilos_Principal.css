@@ -1,0 +1,19 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+}
+
+.sidebar-sticky {
+    position: sticky;
+    top: 0;
+}
+
+.logout-button {
+    margin-top: auto;
+    width: 100%;
+}
+
+
+

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence           http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+  <persistence-unit name="JavaWebPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>com.danilore.proyectomoduloinventario.logica.Usuario</class>
+    <class>com.danilore.proyectomoduloinventario.logica.Cargo</class>
+    <class>com.danilore.proyectomoduloinventario.logica.CategoriaProducto</class>
+    <class>com.danilore.proyectomoduloinventario.logica.Empleado</class>
+    <class>com.danilore.proyectomoduloinventario.logica.GuiaRemisionEntrada</class>
+    <class>com.danilore.proyectomoduloinventario.logica.GuiaRemisionSalida</class>
+    <class>com.danilore.proyectomoduloinventario.logica.IngresoProducto</class>
+    <class>com.danilore.proyectomoduloinventario.logica.Producto</class>
+    <class>com.danilore.proyectomoduloinventario.logica.Kardex</class>
+    <class>com.danilore.proyectomoduloinventario.logica.Proveedor</class>
+    <class>com.danilore.proyectomoduloinventario.logica.SalidaProducto</class>
+    <class>com.danilore.proyectomoduloinventario.logica.TipoDocumentoIdentidad</class>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3307/modulo_inventario?serverTimezone=UTC"/>
+      <property name="javax.persistence.jdbc.user" value="Danilore"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="Danilorexd123@"/>
+      <property name="javax.persistence.schema-generation.database.action" value="create"/>
+    </properties>
+  </persistence-unit>
+</persistence>

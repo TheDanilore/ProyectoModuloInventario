@@ -1,0 +1,148 @@
+
+
+/*MENU*/
+
+.header-222 {
+    background-color: darkcyan;
+    background-size: cover;
+}
+/* Para el menu navegador*/
+.Menu {
+    margin-left: 29%;
+    text-align: center;
+    align-items: center;
+    padding-top: 0rem;
+    float: left;
+    width: 80%;
+    margin-bottom: 0rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.Menu ul,
+ol {
+    list-style: none;
+}
+
+.nav li a {
+    background-color: #00A4BD;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 15px 25px;
+    display: block;
+}
+
+.nav li a:hover {
+    background-color: darkcyan;
+}
+
+.nav>li {
+    float: left;
+}
+
+.nav li ul {
+    display: none;
+    position: absolute;
+    min-width: 130px;
+}
+
+.nav li:hover>ul {
+    display: block;
+}
+
+.nav li ul li {
+    position: relative;
+}
+
+.nav li ul li ul {
+    right: -120px;
+    top: 0px;
+}
+
+
+header {
+    display: grid;
+
+}
+
+/*Boton iniciar sesion*/
+.btn-69 {
+    background-color: #00bd55;
+    border-color: #00A4BD;
+    text-align: center;
+    float: right;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 15px 15px;
+}
+
+.btn-69:hover {
+    border-color: #00A4BD;
+    background-color: #229154;
+}
+
+
+/*BODY*/
+body {
+    background-image: url(../../../Images/Img-tienda/Body/236885f76839eefb92a08305d6afbaca.gif);
+    background-size: 100%;
+}
+
+/*Todo lo que esta en footer1*/
+.footer1 {
+    padding-top: 1rem;
+    background-color: darkcyan;
+    background-size: cover;
+}
+
+
+/*Encuentranos en */
+.encuentranos {
+    color: black;
+    padding-left: 2rem;
+}
+
+/*a reference de facebook y whatsapp*/
+.enlace-fb {
+    color: black;
+    text-decoration: none;
+}
+
+/*imagen con referencia de facebook y whatsapp*/
+.img-fb {
+    padding-left: 2rem;
+    width: 13%;
+}
+
+
+/*Todo lo que esta en footer2*/
+.footer2 {
+    padding-top: 1rem;
+    background-color: black;
+    align-items: center;
+    text-align: center;
+}
+
+/*Descripcion del footer22*/
+.footer22 {
+    margin-bottom: 0rem;
+    color: white;
+}
+
+/*btn agregar carrito*/
+.d-flex {
+    display: flex !important;
+  }
+
+
+.btn-agregarrr{
+    background-color: #00bd55;
+    text-align: center;
+    float: right;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 15px 15px;
+}
+
+.btn-agregarrr:hover {
+    background-color: #229154;
+}
