@@ -18,10 +18,12 @@ C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\
 C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\com\danilore\proyectomoduloinventario\persistencia\exceptions\NonexistentEntityException.java
 C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\com\danilore\proyectomoduloinventario\logica\Proveedor.java
 C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\com\danilore\proyectomoduloinventario\servlets\SvBajaProducto.java
+C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\com\danilore\proyectomoduloinventario\logica\TipoMovimiento.java
 C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\com\danilore\proyectomoduloinventario\servlets\SvEditarSalidaProducto.java
 C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\com\danilore\proyectomoduloinventario\servlets\SvLogout.java
 C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\com\danilore\proyectomoduloinventario\servlets\SvEditarProveedor.java
 C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\com\danilore\proyectomoduloinventario\logica\TipoDocumentoIdentidad.java
+C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\com\danilore\proyectomoduloinventario\servlets\SvKardex.java
 C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\com\danilore\proyectomoduloinventario\servlets\SvProveedor.java
 C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\com\danilore\proyectomoduloinventario\persistencia\KardexJpaController.java
 C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\com\danilore\proyectomoduloinventario\servlets\SvSalidaProducto.java
@@ -38,6 +40,7 @@ C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\
 C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\com\danilore\proyectomoduloinventario\logica\exceptions\PreexistingEntityException.java
 C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\Imagenes\exceptions\exceptions\NonexistentEntityException.java
 C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\com\danilore\proyectomoduloinventario\logica\Kardex.java
+C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\com\danilore\proyectomoduloinventario\persistencia\TipoMovimientoJpaController.java
 C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\com\danilore\proyectomoduloinventario\servlets\SvCargo.java
 C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\com\danilore\proyectomoduloinventario\persistencia\ProductoJpaController.java
 C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\com\danilore\proyectomoduloinventario\persistencia\EmpleadoJpaController.java
@@ -52,6 +55,7 @@ C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\
 C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\com\danilore\proyectomoduloinventario\servlets\SvProductos.java
 C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\com\danilore\proyectomoduloinventario\logica\GuiaRemisionEntrada.java
 C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\com\danilore\proyectomoduloinventario\logica\SalidaProducto.java
+C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\com\danilore\proyectomoduloinventario\servlets\SvEditarKardex.java
 C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\com\danilore\proyectomoduloinventario\persistencia\CargoJpaController.java
 C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\com\danilore\proyectomoduloinventario\logica\GuiaRemisionSalida.java
 C:\Users\ASUS\Documents\NetBeansProjects\ProyectoModuloInventario\src\main\java\com\danilore\proyectomoduloinventario\persistencia\CategoriaProductoJpaController.java

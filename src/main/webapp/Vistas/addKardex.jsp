@@ -10,7 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Editar Producto</title>
+        <title>Registrar Movimiento</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="../css/Estilos_Principal.css">
@@ -42,7 +42,7 @@
                     <div class="container ">
                         <center>
                             <font style="color: black;" align="center">
-                            <h1>Registrar Movimientos</h1>
+                            <h1>Registrar Movimiento</h1>
                             </font>
 
                             <form onsubmit="return validarFormulario()" action="../SvKardex" method="POST">
@@ -101,7 +101,7 @@
                                     </div>
                                     <div class="col">
                                         <label>Total (Costo S/.): </label>
-                                        <input type="text" class="form-control mb-3" id="costoTotal" name="costoTotal" placeholder="Total (Costo S/.)" required>
+                                        <input type="number" class="form-control mb-3" id="costoTotal" name="costoTotal" placeholder="Total (Costo S/.)" required>
                                     </div>
                                 </div>
                                 <div class="row">

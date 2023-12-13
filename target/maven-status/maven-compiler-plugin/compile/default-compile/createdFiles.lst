@@ -27,11 +27,14 @@ com\danilore\proyectomoduloinventario\logica\GuiaRemisionEntrada_.class
 com\danilore\proyectomoduloinventario\persistencia\ControladoraPersistencia.class
 com\danilore\proyectomoduloinventario\logica\SalidaProducto.class
 com\danilore\proyectomoduloinventario\logica\CategoriaProducto_.class
+com\danilore\proyectomoduloinventario\servlets\SvKardex.class
 Imagenes\exceptions\exceptions\PreexistingEntityException.class
 com\danilore\proyectomoduloinventario\persistencia\UsuarioJpaController.class
 com\danilore\proyectomoduloinventario\logica\TipoMoneda.class
 com\danilore\proyectomoduloinventario\persistencia\CategoriaProductoJpaController.class
 com\danilore\proyectomoduloinventario\servlets\SvIngresoProducto.class
+com\danilore\proyectomoduloinventario\logica\TipoMovimiento_.class
+com\danilore\proyectomoduloinventario\logica\TipoMovimiento.class
 com\danilore\proyectomoduloinventario\logica\Cargo.class
 com\danilore\proyectomoduloinventario\persistencia\exceptions\PreexistingEntityException.class
 com\danilore\proyectomoduloinventario\logica\IngresoProducto_.class
@@ -40,6 +43,7 @@ Imagenes\exceptions\NonexistentEntityException.class
 com\danilore\proyectomoduloinventario\logica\Proveedor.class
 com\danilore\proyectomoduloinventario\logica\Cargo_.class
 com\danilore\proyectomoduloinventario\persistencia\UnidadMedidaJpaController.class
+com\danilore\proyectomoduloinventario\servlets\SvEditarKardex.class
 Imagenes\exceptions\exceptions\IllegalOrphanException.class
 com\danilore\proyectomoduloinventario\logica\UnidadMedida.class
 com\danilore\proyectomoduloinventario\logica\Kardex_.class
@@ -48,6 +52,7 @@ com\danilore\proyectomoduloinventario\servlets\SvBajaUsuario.class
 com\danilore\proyectomoduloinventario\logica\Kardex.class
 com\danilore\proyectomoduloinventario\servlets\SvProductos.class
 com\danilore\proyectomoduloinventario\logica\GuiaRemisionSalida.class
+com\danilore\proyectomoduloinventario\persistencia\TipoMovimientoJpaController.class
 com\danilore\proyectomoduloinventario\servlets\SvEditarSalidaProducto.class
 Imagenes\exceptions\PreexistingEntityException.class
 com\danilore\proyectomoduloinventario\logica\Usuario.class

@@ -10,6 +10,7 @@ import com.danilore.proyectomoduloinventario.logica.Producto;
 import com.danilore.proyectomoduloinventario.logica.Proveedor;
 import com.danilore.proyectomoduloinventario.logica.SalidaProducto;
 import com.danilore.proyectomoduloinventario.logica.TipoMoneda;
+import com.danilore.proyectomoduloinventario.logica.TipoMovimiento;
 import com.danilore.proyectomoduloinventario.logica.UnidadMedida;
 import com.danilore.proyectomoduloinventario.logica.Usuario;
 import com.danilore.proyectomoduloinventario.logica.exceptions.NonexistentEntityException;
@@ -36,6 +37,7 @@ public class ControladoraPersistencia {
     KardexJpaController kardexJpa = new KardexJpaController();
     UnidadMedidaJpaController unidadJpa = new UnidadMedidaJpaController();
     TipoMonedaJpaController tipoMonedaJpa = new TipoMonedaJpaController();
+    TipoMovimientoJpaController tipoMovimientoJpa = new TipoMovimientoJpaController();
 
     public ControladoraPersistencia() {
     }
@@ -334,6 +336,32 @@ public class ControladoraPersistencia {
     public void editTipoMoneda(TipoMoneda tipo) {
         try {
             tipoMonedaJpa.edit(tipo);
+        } catch (Exception ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    
+    
+    /////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    //Operacion CREATE de Usuario
+    public void crearTipoMovimiento(TipoMovimiento tipo) {
+        tipoMovimientoJpa.create(tipo);
+    }
+
+    //Operacion READ de Usuario
+    public List<TipoMovimiento> listTipoMovimiento() {
+        return tipoMovimientoJpa.findTipoMovimientoEntities();
+    }
+    
+    public TipoMovimiento getTipoMovimiento(char id_editar) {
+        return tipoMovimientoJpa.findTipoMovimiento(id_editar);
+    }
+    
+    public void editTipoMovimiento(TipoMovimiento tipo) {
+        try {
+            tipoMovimientoJpa.edit(tipo);
         } catch (Exception ex) {
             Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
         }

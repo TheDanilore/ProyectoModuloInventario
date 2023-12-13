@@ -253,4 +253,24 @@ public class Controladora {
 
         controlPersis.editTipoMoneda(tipo);
     }
+    
+    /////////////////////////////////////////////////////////////////////////////////////////////
+    
+    public void crearTipoMovimiento(TipoMovimiento tipo) {
+        controlPersis.crearTipoMovimiento(tipo);
+    }
+
+    public List<TipoMovimiento> listTipoMovimiento() {
+        return controlPersis.listTipoMovimiento();
+    }
+
+    public TipoMovimiento getTipoMovimiento(char id_editar) {
+        return controlPersis.getTipoMovimiento(id_editar);
+    }
+
+    public void editTipoMovimiento(TipoMovimiento tipo) {
+
+        controlPersis.editTipoMovimiento(tipo);
+    }
+    
 }

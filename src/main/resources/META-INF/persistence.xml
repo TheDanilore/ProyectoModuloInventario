@@ -16,6 +16,7 @@
     <class>com.danilore.proyectomoduloinventario.logica.TipoDocumentoIdentidad</class>
     <class>com.danilore.proyectomoduloinventario.logica.UnidadMedida</class>
     <class>com.danilore.proyectomoduloinventario.logica.TipoMoneda</class>
+    <class>com.danilore.proyectomoduloinventario.logica.TipoMovimiento</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3307/modulo_inventario?serverTimezone=UTC"/>
