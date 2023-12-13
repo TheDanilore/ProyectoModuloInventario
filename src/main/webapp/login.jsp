@@ -39,7 +39,7 @@
                 <div class="card-body">
                     <img src="Imagenes/perfil.png" alt="Logo de la empresa" class="logo-img">
                     <h1 class="card-title text-center">LOGIN</h1>
-                    <form action="SvLogin" method="POST" <!--onsubmit="redirectToNewPage()"-->>
+                    <form action="SvLogin" method="POST">
                         <div class="form-group">
                             <label for="correo"><strong>Correo:</strong></label>
                             <input type="text" class="form-control" id="correo" name="correo" style="width: 60%; margin: 0 auto;" placeholder="Correo Electronico"  required>
@@ -65,12 +65,6 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-<script>
-    function redirectToNewPage() {
-        // Puedes cambiar 'nuevaPagina.html' por la URL de la página a la que deseas redirigir
-        window.location.href = "Principal.jsp";
-        return false; // Esto evita que el formulario se envíe normalmente
-    }
-</script>
+
 </body>
 </html>

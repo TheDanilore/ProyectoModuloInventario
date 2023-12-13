@@ -141,11 +141,12 @@
                                     <!-- Subopciones de la Opción 2 -->
                                     <ul class="nav flex-column ml-3">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#"></a>
+                                            <a class="nav-link" href="#"><%=request.getSession().getAttribute("usuario")%></a>
                                         </li>
                                         <li class="nav-item">
-                                            <!--<a class="nav-link" href="../SvCategoriaProducto">Cerrar Sesión</a>-->
-                                            <button class="btn btn-danger mt-4 logout-button">Cerrar Sesión</button>
+                                            <form action="SvLogout" method="POST">
+                                                <input class="btn btn-danger mt-4 logout-button" type="submit" value="Cerrar sesión" />
+                                            </form>
                                         </li>
                                     </ul>
                                 </div>

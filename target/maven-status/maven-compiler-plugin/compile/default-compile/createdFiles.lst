@@ -14,6 +14,7 @@ com\danilore\proyectomoduloinventario\persistencia\TipoDocumentoIdentidadJpaCont
 com\danilore\proyectomoduloinventario\servlets\SvActivarProveedor.class
 com\danilore\proyectomoduloinventario\persistencia\GuiaRemisionEntradaJpaController.class
 Imagenes\exceptions\IllegalOrphanException.class
+com\danilore\proyectomoduloinventario\servlets\SvLogout.class
 com\danilore\proyectomoduloinventario\logica\TipoDocumentoIdentidad.class
 com\danilore\proyectomoduloinventario\logica\Empleado.class
 com\danilore\proyectomoduloinventario\persistencia\exceptions\NonexistentEntityException.class
