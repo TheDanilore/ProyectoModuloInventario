@@ -12,7 +12,7 @@ public class Controladora {
 
     ControladoraPersistencia controlPersis = new ControladoraPersistencia();
 
-    public void crearUsuario(String nombres,String correo, String contra, int cargo, int estado) {
+    public void crearUsuario(String nombres, String correo, String contra, int cargo, int estado) {
         Usuario usu = new Usuario();
         usu.setNombres_usuario(nombres);
         usu.setCorreo_usuario(correo);
@@ -194,7 +194,7 @@ public class Controladora {
 
     /////////////////////////////////////////////////////////////////////////
     //Validacion de inicio de sesion
-    public boolean validacionIngreso(String correo, String contra, int estado) {
+    public boolean validacionIngreso(String correo, String contra) {
         boolean ingreso = false;
 
         List<Usuario> listaUsuarios = new ArrayList<Usuario>();
@@ -212,12 +212,8 @@ public class Controladora {
         }
         return ingreso;
     }
-    
-    
-    
-    
+
     /////////////////////////////////////////////////////////////////////////////////////////////
-    
     public void crearUnidadMedida(UnidadMedida unidad) {
         controlPersis.crearUnidadMedida(unidad);
     }
@@ -234,9 +230,8 @@ public class Controladora {
 
         controlPersis.editUnidadMedida(unidad);
     }
-    
+
     /////////////////////////////////////////////////////////////////////////////////////////////
-    
     public void crearTipoMoneda(TipoMoneda tipo) {
         controlPersis.crearTipoMoneda(tipo);
     }
@@ -253,9 +248,8 @@ public class Controladora {
 
         controlPersis.editTipoMoneda(tipo);
     }
-    
+
     /////////////////////////////////////////////////////////////////////////////////////////////
-    
     public void crearTipoMovimiento(TipoMovimiento tipo) {
         controlPersis.crearTipoMovimiento(tipo);
     }
@@ -272,5 +266,5 @@ public class Controladora {
 
         controlPersis.editTipoMovimiento(tipo);
     }
-    
+
 }

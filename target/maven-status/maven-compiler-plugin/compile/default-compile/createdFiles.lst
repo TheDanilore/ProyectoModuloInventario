@@ -5,6 +5,7 @@ com\danilore\proyectomoduloinventario\logica\UnidadMedida_.class
 com\danilore\proyectomoduloinventario\servlets\SvEditarProducto.class
 com\danilore\proyectomoduloinventario\logica\Producto_.class
 com\danilore\proyectomoduloinventario\logica\Proveedor_.class
+com\danilore\proyectomoduloinventario\logica\MenuOption.class
 com\danilore\proyectomoduloinventario\servlets\SvEditarCategoriaProducto.class
 com\danilore\proyectomoduloinventario\logica\CategoriaProducto.class
 com\danilore\proyectomoduloinventario\servlets\SvEditarIngresoProducto.class
@@ -36,6 +37,7 @@ com\danilore\proyectomoduloinventario\servlets\SvIngresoProducto.class
 com\danilore\proyectomoduloinventario\logica\TipoMovimiento_.class
 com\danilore\proyectomoduloinventario\logica\TipoMovimiento.class
 com\danilore\proyectomoduloinventario\logica\Cargo.class
+com\danilore\proyectomoduloinventario\logica\Permiso.class
 com\danilore\proyectomoduloinventario\persistencia\exceptions\PreexistingEntityException.class
 com\danilore\proyectomoduloinventario\logica\IngresoProducto_.class
 com\danilore\proyectomoduloinventario\logica\GuiaRemisionSalida_.class
@@ -66,6 +68,7 @@ com\danilore\proyectomoduloinventario\servlets\SvCargo.class
 com\danilore\proyectomoduloinventario\servlets\SvBajaProveedor.class
 com\danilore\proyectomoduloinventario\servlets\SvSalidaProducto.class
 com\danilore\proyectomoduloinventario\persistencia\CargoJpaController.class
+com\danilore\proyectomoduloinventario\logica\MenuOption_.class
 com\danilore\proyectomoduloinventario\logica\Producto.class
 com\danilore\proyectomoduloinventario\persistencia\ProveedorJpaController.class
 com\danilore\proyectomoduloinventario\servlets\SvUsuarios.class
@@ -73,6 +76,7 @@ com\danilore\proyectomoduloinventario\logica\Empleado_.class
 Imagenes\exceptions\exceptions\NonexistentEntityException.class
 com\danilore\proyectomoduloinventario\logica\TipoDocumentoIdentidad_.class
 com\danilore\proyectomoduloinventario\servlets\SvEditarUsuario.class
+com\danilore\proyectomoduloinventario\logica\Permiso_.class
 com\danilore\proyectomoduloinventario\servlets\SvEditarProveedor.class
 com\danilore\proyectomoduloinventario\logica\TipoMoneda_.class
 com\danilore\proyectomoduloinventario\servlets\SvActivarCargo.class

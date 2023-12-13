@@ -5,6 +5,7 @@
 package com.danilore.proyectomoduloinventario.servlets;
 
 import com.danilore.proyectomoduloinventario.logica.Controladora;
+import com.danilore.proyectomoduloinventario.logica.Usuario;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,40 +22,37 @@ import javax.servlet.http.HttpSession;
 public class SvLogin extends HttpServlet {
 
     Controladora control = new Controladora();
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-    }
 
+    }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
     }
 
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
         String correo = request.getParameter("correo");
         String contra = request.getParameter("contra");
-        int estado = 1;
-        
-        
+
         boolean validacion = false;
-        
-        validacion=control.validacionIngreso(correo,contra,estado);
-        
-        if (validacion==true) {
+
+        validacion = control.validacionIngreso(correo, contra);
+
+        if (validacion == true) {
             HttpSession misession = request.getSession(true);
             misession.setAttribute("usuario", correo);
             response.sendRedirect("index.jsp");
-        }else{
+        } else {
             response.sendRedirect("loginError.jsp");
         }
-        
-    }
 
+    }
 
     @Override
     public String getServletInfo() {

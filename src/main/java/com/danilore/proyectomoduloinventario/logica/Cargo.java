@@ -6,10 +6,12 @@ package com.danilore.proyectomoduloinventario.logica;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -27,16 +29,17 @@ public class Cargo implements Serializable {
     private String descripcion;
     private int id_estado;
     private LocalDateTime fecha_creacion;
+    
+
+    public Cargo() {
+        fecha_creacion = LocalDateTime.now();
+    }
 
     public Cargo(int id_cargo, String descripcion, int id_estado, LocalDateTime fecha_creacion) {
         this.id_cargo = id_cargo;
         this.descripcion = descripcion;
         this.id_estado = id_estado;
         this.fecha_creacion = fecha_creacion;
-    }
-
-    public Cargo() {
-        fecha_creacion = LocalDateTime.now();
     }
 
     public int getId_cargo() {
